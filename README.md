@@ -23,13 +23,41 @@ Things you may want to cover:
 
 * ...
 
-## groups_usersテーブル
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|username|string||null: false|
+|email|string|null: false|
+|password|string|null: false|
+### Association
+- belongs_to :group_users
+- has_many :posts
 
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|image|twxt||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :groups_users
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|groupname|integer|null: false, foreign_key: true|
+### Association
+- has_many :posts
+- has_many :groups_users
+
+
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :groups
+- belongs_to :users
