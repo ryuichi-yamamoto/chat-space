@@ -40,15 +40,16 @@ Things you may want to cover:
 |text|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
+|name|integer|null: false|
 ### Association
 - has_many :posts
 - has_many :groups_users
