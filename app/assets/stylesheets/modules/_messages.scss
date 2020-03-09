@@ -52,9 +52,10 @@ $sky-color: #38aef0;
       }
     }
   }
-    &__group-list {
+  &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    &__group {
       &__name {
         font-size: 15px;
         padding: 20px 20px 5px 20px;
@@ -63,10 +64,16 @@ $sky-color: #38aef0;
         font-size: 11px;
         padding: 0px 20px 40px 20px;
       }
+      a{
+        color: $white-word;
+        text-decoration: none;
+      }
+    }
   }
 }
 
 .chat-main {
+  z-index: -1;
   height: 100vh;
   width: calc(100vw - 300px);
   background-color:$white-word;
