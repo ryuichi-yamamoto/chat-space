@@ -73,7 +73,6 @@ $sky-color: #38aef0;
 }
 
 .chat-main {
-  z-index: -1;
   height: 100vh;
   width: calc(100vw - 300px);
   background-color:$white-word;
@@ -144,21 +143,20 @@ $sky-color: #38aef0;
       &__type {
         width: 100%;
         position: relative;
-        &__icon {
+        .form__mask__image {
           height: 50px;
           margin-right: 10px;
           line-height: 50px;
           position: absolute;
           bottom: 0px;
           right: 0px;
-          input {
+          .hidden {
             display: none;
           }
         }
-
        }
     }
-    &__send{
+    .form__submit{
       height: 50px;
       width: 150px;
       background-color: $sky-color;
@@ -167,6 +165,5 @@ $sky-color: #38aef0;
       @include flexcen();
       margin-right: 40px;
     }
-
   }
 }
