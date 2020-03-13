@@ -11,10 +11,6 @@ $(function(){
              ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
-          <img class="lower-message__image">
-             ${message.content}
-           </p>
          </div>
          <img src=${message.image} >
        </div>`
@@ -56,12 +52,13 @@ $('#new_message').on('submit', function(e){
     $('.chat-main__message-list').append(html);
     $('form')[0].reset();
     $('.chat-main .chat-main__message-list').animate({ scrollTop: $('.chat-main .chat-main__message-list')[0].scrollHeight});
-    $('input[type="submit"]').prop('disabled',false);
   })
   .fail(function(){
    alert("エラー")
-   $('input[type="submit"]').prop('disabled',false);
   })
+  .always(function() {
+    $('input[type="submit"]').prop('disabled',false);
+  });
 })
 });
 
