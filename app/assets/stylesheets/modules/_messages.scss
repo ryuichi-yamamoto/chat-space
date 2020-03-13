@@ -73,7 +73,6 @@ $sky-color: #38aef0;
 }
 
 .chat-main {
-  height: 100vh;
   width: calc(100vw - 300px);
   background-color:$white-word;
   position: fixed;
@@ -82,7 +81,7 @@ $sky-color: #38aef0;
   &__group-info {
     height: 100px;
     background-color: $white-word;
-    border-bottom: solid #eeeeee;
+    border-bottom: solid 1px #eeeeee;
     @include flexbt();
     &__name {
       color: #333333;
@@ -105,65 +104,68 @@ $sky-color: #38aef0;
         text-decoration: none;
         }
   }
-  &__message-list {
-    height: calc(100vh - 100px - 90px);
+  .chat-main__message-list {
+    width: 100vw;
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
     background-color: #fafafa;
-    &__name {
-      color: #333333;
-      font-size: 16px;
-      padding: 35px 0px 12px 40px;
-      display: flex;
-      justify-content: flex-start;
-      &__day {
-        color: $grey-word;
-        font-size: 12px;
+    overflow: scroll;
+    .message {
+      padding-bottom: 40px;
+      .upper-message {
+        display: flex;
+        margin-bottom: 10PX;
+        .upper-message__user-name {
+          color: #434A54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .upper-message__date {
+            color: $grey-word;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+        .lower-message {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 10px;
       }
     }
-    &__hello {
-      color: #434A54;
-      font-size: 14px;
-      padding: 0px 0px 11px 40px;
-    }
   }
-  &__message-form {
+  .chat-main__group-info__message-bar {
     height: 90px;
     background-color: #d2d2d2;
-    @include flexbt();
-    align-items: center;
-    input {
-      width: 100%;
-      height: 50px;
-      padding: 0px 0px 0px 10px;
-    }
-    &__message-bar {
-      width: 100%;
-      height: 50px;
-      margin-right: 15px;
-      margin-left: 40px;
-      &__type {
-        width: 100%;
-        position: relative;
+    padding: 20px 40px;
+    .new_message {
+      display: flex;
+      .form__message-form {
+        width: 100vw;
+      }
+      .chat-main__message-form__message-bar__type {
         .form__mask__image {
+          position: relative;
           height: 50px;
-          margin-right: 10px;
-          line-height: 50px;
-          position: absolute;
-          bottom: 0px;
-          right: 0px;
+          color: #434A54;
+          .icon {
+            position: absolute;
+            top: 1px;
+            right: 10px;
+            font-size: 30px;
+          }
           .hidden {
             display: none;
           }
         }
-       }
-    }
-    .form__submit{
-      height: 50px;
-      width: 150px;
-      background-color: $sky-color;
-      color: $white-word;
-      line-height: 50px;
-      @include flexcen();
-      margin-right: 40px;
+      }
+      .form__submit{
+        height: 50px;
+        width: 100px;
+        background-color: $sky-color;
+        color: $white-word;
+        line-height: 50px;
+        margin-left: 15px;
+      }
     }
   }
 }
