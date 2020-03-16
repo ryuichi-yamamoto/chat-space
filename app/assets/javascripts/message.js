@@ -99,7 +99,7 @@ $(function(){
       alert('error');
     });
   };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  if (document.location.href.match(/\/groups\/\d+\/chat-main__message-list/)) {
     setInterval(reloadMessages, 7000);
   }
 });
