@@ -95,16 +95,20 @@ $sky-color: #38aef0;
         padding: 15px 0px 0px;
       }
     }
+    &__edit {
+      height: 40px;
+      line-height: 40px;
+      padding: 0px 20px;
+      margin-top: 30px;
+      border: solid 1px $sky-color;
+      position: absolute;
+      right: 40px;
+      color: $sky-color;
       a {
-        display: block;
-        height: 40px;
-        width: 72px;
         color: $sky-color;
-        font-size: 16px;
-        line-height: 40px;
-        padding: 28px 20px 0px 20px;
         text-decoration: none;
-        }
+      }
+    }
   }
   .chat-main__message-list {
     width: 100vw;
