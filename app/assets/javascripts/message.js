@@ -77,6 +77,7 @@ $(function(){
   })
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
+    console.log(last_message_id)
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -93,15 +94,18 @@ $(function(){
 
       $('.chat-main__message-list').append(insertHTML);
       $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
-    }
-  })
+      }
+    })
+    
     .fail(function() {
       alert('error');
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/chat-main__message-list/)) {
-    setInterval(reloadMessages, 7000);
+    // setInterval(reloadMessages, 7000);
   }
+  setInterval(reloadMessages, 7000);
 });
 
 
+// kkkkkkkkkkkkkk
